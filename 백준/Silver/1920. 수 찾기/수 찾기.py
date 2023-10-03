@@ -6,7 +6,8 @@ input()
 m = list(map(int, input().split()))
 
 for x in m:
-    if bisect.bisect_right(a, x) - bisect.bisect_left(a, x) > 0:
+    idx = bisect.bisect_left(a, x)
+    if (idx != len(a)) and (a[idx] == x):
         print(1)
     else:
         print(0)
