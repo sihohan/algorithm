@@ -1,6 +1,6 @@
 import sys
 
-sys.setrecursionlimit(10**7)
+sys.setrecursionlimit(10**6)
 input = sys.stdin.readline
 
 
@@ -9,7 +9,6 @@ def dfs(adj, r, visited, vertex_to_order):
     visited[r] = True
     order += 1
     vertex_to_order[r] = order
-    # print(vertex_to_order)
     for j in sorted(adj[r]):
         if not visited[j]:
             dfs(adj, j, visited, vertex_to_order)
